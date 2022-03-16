@@ -1,4 +1,4 @@
-#name: Build remote repo only if new commits were pushed
+name: Build remote repo only if new commits were pushed
 on:
   workflow_dispatch:
   push:
@@ -50,14 +50,11 @@ jobs:
         run: |
           echo 'CONFIG_TARGET_ipq807x=y' > .config
           echo 'CONFIG_TARGET_ipq807x_generic=y' >> .config
-          echo 'CONFIG_TARGET_ipq807x_generic_DEVICE_xiaomi_ax6=y' >> .config
+          echo 'CONFIG_TARGET_ipq807x_generic_DEVICE_redmi_ax6=y' >> .config
           echo 'CONFIG_HAS_SUBTARGETS=y' >> .config
+          echo 'CONFIG_TARGET_BOARD="ipq807x"' >> .config
           echo 'CONFIG_TARGET_SUBTARGET="generic"' >> .config
-          echo "CONFIG_TARGET_ipq807x_generic=y\n">> .config
-          echo "CONFIG_TARGET_MULTI_PROFILE=y\n">> .config
-          echo "CONFIG_TARGET_ALL_PROFILES=y\n" >> .config
-          echo "CONFIG_TARGET_PER_DEVICE_ROOTFS=y\n" >> .config
-          echo 'CONFIG_TARGET_PROFILE="DEVICE_xiaomi_ax6"' >> .config
+          echo 'CONFIG_TARGET_PROFILE="DEVICE_redmi_ax6"' >> .config
           #firmware
           echo "CONFIG_PACKAGE_nss-firmware-ipq8074=y" >> .config
           echo "CONFIG_PACKAGE_kmod-qca-nss-dp=y" >> .config
@@ -184,4 +181,3 @@ jobs:
           title: 'Updated prebuilt images (${{ env.BUILDINFO }})'
           automatic_release_tag: ipq807x-latest@v4.4
           files: bin/targets/ipq807x/generic/*
-     
