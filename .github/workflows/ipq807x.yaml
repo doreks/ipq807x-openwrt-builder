@@ -46,7 +46,7 @@ jobs:
         run: |
           ./scripts/feeds update -a
           ./scripts/feeds install -a
-      - name: Generate config for IPQ807x Generic
+      - name: Generate config for IPQ807x Generic AX6
         run: |
           echo 'CONFIG_TARGET_ipq807x=y' > .config
           echo 'CONFIG_TARGET_ipq807x_generic=y' >> .config
