@@ -6,7 +6,7 @@ on:
     - cron: '0 7 * * *'
 jobs:
   check:
-    name: Check remote repo for new commits
+    name: Check remote repos for new commits
     runs-on: ubuntu-latest
     steps:
       - name: Use GitHub API to poll commits
