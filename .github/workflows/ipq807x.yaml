@@ -15,17 +15,17 @@ jobs:
         env:
           REMOTE_REPOSITORY: robimarko/openwrt
           REMOTE_BRANCH: ipq807x-5.15
-      - name: Calculate hours since last commit
-        id: calc
-        run: |
-          date="$(jq -r '.commit.committer.date' commit.json)"
-          timestamp=$(date --utc -d "$date" +%s)
-          hours=$(( ( $(date --utc +%s) - $timestamp ) / 3600 ))
-          echo "Last commit date: $date"
-          echo "Hours since last commit: $hours"
-          echo "::set-output name=commit_age::$hours"
-    outputs:
-      commit_age: ${{ steps.calc.outputs.commit_age }}
+#      - name: Calculate hours since last commit
+#        id: calc
+#        run: |
+#          date="$(jq -r '.commit.committer.date' commit.json)"
+#          timestamp=$(date --utc -d "$date" +%s)
+#          hours=$(( ( $(date --utc +%s) - $timestamp ) / 3600 ))
+#          echo "Last commit date: $date"
+#          echo "Hours since last commit: $hours"
+#          echo "::set-output name=commit_age::$hours"
+#    outputs:
+#      commit_age: ${{ steps.calc.outputs.commit_age }}
   build:
     name: Build the remote repository
     needs: check
