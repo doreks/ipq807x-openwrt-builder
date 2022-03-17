@@ -76,6 +76,9 @@ jobs:
           echo "CONFIG_PACKAGE_wpad-mini=n" >> .config
           echo "CONFIG_PACKAGE_wpad-basic-wolfssl=n" >> .config
           echo "CONFIG_PACKAGE_wpad-wolfssl=y" >> .config
+          # banip tools
+          echo "CONFIG_PACKAGE_kmod-ipt-ipset=y" >> .config
+          echo "CONFIG_PACKAGE_libipset13=y" >> .config
           # services and tools
           echo "CONFIG_PACKAGE_wireguard=y" >> .config
           echo "CONFIG_PACKAGE_arp-scan=y" >> .config
