@@ -177,7 +177,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Download the image artifacts
+      - name: Download the image artifact
         uses: actions/download-artifact@v2
         with:
           name: ipq807x-images
