@@ -80,8 +80,8 @@ jobs:
           echo "CONFIG_PACKAGE_banip=y" >> .config
           echo "CONFIG_PACKAGE_luci-app-banip=y" >> .config
           echo "CONFIG_PACKAGE_kmod-ipt-ipset=y" >> .config
-          echo "CONFIG_PACKAGE_kmod-ipt-ipset=y\n" >> .config
-          echo "CONFIG_PACKAGE_ipset=y\n" >> .config
+          echo "CONFIG_PACKAGE_file2ban=y" >> .config
+          echo "CONFIG_PACKAGE_ipset=y" >> .config
           echo "CONFIG_PACKAGE_libipset13=y" >> .config
           # services and tools
           echo "CONFIG_PACKAGE_wireguard=y" >> .config
